@@ -9,16 +9,16 @@ turtle.pencolor("white")
 
 #variables
 #pos1
-x1 = 259.81
-y1 = 150.00
+x1 = -259.81
+y1 = -150.00
 
 #pos2
-x2 = -259.81
-y2 = 150.00
+x2 = 259.81
+y2 = -150.00
 
 #pos3
 x3 = 0.00
-y3 = -300.00
+y3 = 300.00
 
 
 
@@ -28,7 +28,7 @@ def draw_dot():
 
 def draw_red_dot():
     turtle.penup()
-    turtle.dot(5, "red")
+    turtle.dot(6, "red")
 
 
 def draw_circle(radius):
@@ -41,12 +41,12 @@ def draw_circle(radius):
 def draw_triangle(radius):
     side_length = 2 * radius * math.sin(math.pi / 3)
     turtle.penup()
-    turtle.goto(0, -radius)
+    turtle.goto(0, radius)
     turtle.pendown()
     turtle.setheading(60)
     for i in range(3):
         turtle.penup()
-        turtle.forward(side_length)
+        turtle.forward(-side_length)
         turtle.left(120)
         draw_red_dot()
         global pos1,pos2,pos3
@@ -105,6 +105,9 @@ def main():
     draw_circle(radius)
     draw_triangle(radius)
     draw_line()
+    print(pos1)
+    print(pos2)
+    print(pos3)
    
 
     turtle.hideturtle()
